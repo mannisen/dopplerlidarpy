@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/test_LS_spectrum.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1095">
+                    <caret line="76" column="104" selection-start-line="75" selection-end-line="76" selection-end-column="104" />
+                    <folding>
+                      <element signature="e#57#125#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/test_halo_fft.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="315">
+                    <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
+                    <folding>
+                      <element signature="e#111#138#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/input_checks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" column="20" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/my_args_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2190">
+              <caret line="150" column="55" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
+              <folding>
+                <element signature="e#184#199#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/mathematical/spectrum.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/cm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="82" column="76" selection-start-line="82" selection-start-column="76" selection-end-line="82" selection-end-column="76" />
+              <folding>
+                <element signature="e#522#569#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/cm_colorblind.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/dl_var_atts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2370">
+              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/plot_dl.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3150">
+              <caret line="215" column="58" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="58" />
+              <folding>
+                <element signature="e#280#334#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>processing_level</find>
+      <find>params</find>
+      <find>valid_dates_format</find>
+      <find>gutils</find>
+      <find>date_txt2posix</find>
+      <find>.l</find>
+      <find>[0]</find>
+      <find>data</find>
+      <find>pcolorfast</find>
+      <find>magma</find>
+      <find>00</find>
+      <find>10</find>
+      <find>21</find>
+      <find>np.array(</find>
+      <find>plt.get_cmap('viridis')</find>
+      <find>np.ceil(len(f.dimensions[&quot;time&quot;])/plot_reso)</find>
+      <find>file_name_out</find>
+      <find>plot_reso</find>
+      <find>4,</find>
+      <find>(m)</find>
+      <find>[0, 1, 2, 3, 4]</find>
+      <find>&quot;</find>
+      <find>strlist2str</find>
+      <find>2.1</find>
+      <find>, 4</find>
+      <find>, 5</find>
+      <find>VarPlotAttBlueprint</find>
+      <find>ls_</find>
+      <find>velo_</find>
+      <find>range_</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>obs_type</replace>
+      <replace>process_lev</replace>
+      <replace>sp</replace>
+      <replace>valid_format</replace>
+      <replace>gu</replace>
+      <replace>date_txt2epoch</replace>
+      <replace>.processing_level</replace>
+      <replace>nc</replace>
+      <replace>pcolormesh</replace>
+      <replace>viridis</replace>
+      <replace>01</replace>
+      <replace>11</replace>
+      <replace>20</replace>
+      <replace>21</replace>
+      <replace>cmap</replace>
+      <replace>step</replace>
+      <replace>fname_out</replace>
+      <replace>plot_time_reso</replace>
+      <replace>5,</replace>
+      <replace>(km)</replace>
+      <replace>np.arange(0, 5, 1)</replace>
+      <replace>'</replace>
+      <replace>list2str</replace>
+      <replace>3.1</replace>
+      <replace>, 3</replace>
+      <replace>VarPlotAttributes</replace>
+      <replace>velo_sel</replace>
+      <replace>time_sel</replace>
+      <replace>velo</replace>
+      <replace>height_agl_</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dopplerlidar/finufft" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dopplerlidar/__init__.py" />
+        <option value="$PROJECT_DIR$/scripts/run_leosphere_sta2nc.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/leosphere/read_sta_and_write_nc.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/halo/read_hpl_write_nc.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/my_arg_parser.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/get_files.py" />
+        <option value="$PROJECT_DIR$/scripts/plot_dl.py" />
+        <option value="$PROJECT_DIR$/scripts/run_halo_calibration.py" />
+        <option value="$PROJECT_DIR$/scripts/plot_quicklooks.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/time_utils.py" />
+        <option value="$PROJECT_DIR$/scripts/calculate_flies.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/input_checks.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_attributes.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/my_nc_tools.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dcm.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/balance-rgb.txt" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/_cm.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/_cm_colorblind.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/transfer_halo_files.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_var_plot_attributes.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_var_attributes.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_var_plot_atts.py" />
+        <option value="$PROJECT_DIR$/scripts/create_db.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_config_utils.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/plot_dl.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/cm_colorblind.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/cm.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/finufft/finufftpy/_interfaces.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/math/my_FFT.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/mathematical/my_FFT.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/plot_utils.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/__init__.py" />
+        <option value="$PROJECT_DIR$/scripts/test_LS_spectrum.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/mathematical/spectrum.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/opettelu/opettelu_old/test_create_db.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/dl_var_atts.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/my_args_parser.py" />
+        <option value="$PROJECT_DIR$/dopplerlidar/utilities/general_utils.py" />
+        <option value="$PROJECT_DIR$/scripts/test_halo_fft.py" />
+        <option value="$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/mathematical/spectrum.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="5">
+    <option name="y" value="27" />
+    <option name="width" value="1280" />
+    <option name="height" value="1413" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="dopplerlidarpy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dopplerlidarpy" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.run_halo_calibration">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_halo_calibration" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/run_halo_calibration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_leosphere_sta2nc" type="PythonConfigurationType" factoryName="Python">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/run_leosphere_sta2nc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run_halo_calibration" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="" />
+      <created>1562223290822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562223290822</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1280" height="1413" extended-state="4" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21178344" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3294025" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2712264" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294025" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294025" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3294025" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3970126" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.24056605" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24044587" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2712264" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294025" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294025" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3294025" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3017429" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.4504717" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/opettelu/opettelu_old/proggis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="151" selection-start-line="151" selection-end-line="153" selection-end-column="4" />
+          <folding>
+            <element signature="e#142#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/plot_dl.py" />
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/opettelu/opettelu_old/read_and_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#81#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dopplerlidar/utilities/my_arg_parser.py" />
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/run_halo_calibration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#48#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/balance-rgb.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="255" column="74" selection-start-line="255" selection-start-column="74" selection-end-line="255" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/calculate_flies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dopplerlidar/utilities/transfer_halo_files.py" />
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/halo/read_hpl_write_nc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/cloudnetpy/cloudnetpy/plot_meta.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/cloudnetpy/cloudnetpy/metadata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/cloudnetpy/cloudnetpy/droplet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2235" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/dl_toolbox_version.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/erdc_iceFire.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/get_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/plot_quicklooks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="50" />
+          <folding>
+            <element signature="e#48#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/matplotlib/cm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="289" selection-start-line="289" selection-end-line="289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/_cm_colorblind.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding>
+            <element signature="e#80#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/finufft/python_tests/demo1d1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#113#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/third_party/thriftpy/_shaded_thriftpy/thrift.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="283" column="49" selection-start-line="283" selection-start-column="49" selection-end-line="283" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/finufft/finufftpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/finufft/python_tests/run_accuracy_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dopplerlidar/math/__init__.py" />
+    <entry file="file:///usr/lib/python3/dist-packages/IPython/core/interactiveshell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="2881" column="1" selection-start-line="2881" selection-start-column="1" selection-end-line="2881" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/finufft/python_tests/accuracy_speed_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dopplerlidar/math/my_FFT.py" />
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/finufft/finufftpy/_interfaces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="187" column="10" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/dl_var_plot_atts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="e#111#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/matplotlib/colors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="1098" column="13" lean-forward="true" selection-start-line="1098" selection-start-column="13" selection-end-line="1098" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#111#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/plot_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/time_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
+          <folding>
+            <element signature="e#110#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/opettelu/opettelu_old/test_create_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+          <folding>
+            <element signature="e#111#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/run_leosphere_sta2nc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/leosphere/read_sta_and_write_nc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/my_nc_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-715">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="e#110#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/_cm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="913">
+          <caret line="1771" column="29" selection-start-line="1771" selection-start-column="29" selection-end-line="1771" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/general_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#110#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/dl_config_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="108" column="29" lean-forward="true" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+          <folding>
+            <element signature="e#110#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/input_checks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/my_args_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="150" column="55" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
+          <folding>
+            <element signature="e#184#199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/cm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="82" column="76" selection-start-line="82" selection-start-column="76" selection-end-line="82" selection-end-column="76" />
+          <folding>
+            <element signature="e#522#569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/cm_colorblind.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/dl_var_atts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/utilities/plot_dl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="215" column="58" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="58" />
+          <folding>
+            <element signature="e#280#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/test_LS_spectrum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="76" column="104" selection-start-line="75" selection-end-line="76" selection-end-column="104" />
+          <folding>
+            <element signature="e#57#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/scripts/test_halo_fft.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
+          <folding>
+            <element signature="e#111#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dopplerlidarpy/dopplerlidar/mathematical/spectrum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
