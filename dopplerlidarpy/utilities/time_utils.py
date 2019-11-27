@@ -7,6 +7,7 @@ Created on Tue May 21 11:10:04 2019
 """
 import time
 import calendar
+import numpy as np
 from datetime import datetime, timedelta
 
 
@@ -191,3 +192,30 @@ def datetime_range(start_datetime, end_datetime):
     for n in range(start_date_epoch, end_date_epoch):
         the_date_txt = epoch2date_txt(n, d_format)
         yield datetime.strptime(the_date_txt, d_format)
+
+
+def time_hrs_utc2epoch(year_, month_, day_, time_hrs):
+    """
+
+    Args:
+        year_:
+        month_:
+        day_:
+        time_hrs:
+
+    Returns:
+
+    """
+    hrs_ = np.floor(time_hrs[:])
+    mins_ = np.floor((time_hrs[:] - hrs_) * 60)
+    secs_ = np.round((((time_hrs[:] - hrs_) * 60) - mins_) * 60)
+
+    unix_time_ = np.empty([len(time_hrs)])
+    unix_time_[:] = np.nan
+    for i in range(len(time_hrs)):
+        thedate = "{}-{:02d}-{:02d}_{:02d}:{:02d}:{:02d}".format(year_, int(month_), int(day_), int(hrs_[i]), int(mins_[i]), int(secs_[i]))
+        thedate.replace(" ", "0")
+        date_format = check_date_format(thedate)
+        unix_time_[i] = date_txt2epoch(thedate, date_format)
+
+    return unix_time_

@@ -33,7 +33,6 @@ def normalize_between(values, actual_bounds, desired_bounds):
 def find_nearest(a, b):
     """Find nearest values of 'b' from 'a', adapted from HALO_lidar_toolbox MATLAB function look4nearest.m
 
-
     Args:
         a (ndarray): look from
         b (ndarray): look for
@@ -52,7 +51,7 @@ def find_nearest(a, b):
     ib = p[ic]
     ab = b[ib]
 
-    return ib, ab
+    return ib.astype(int), ab.astype(float)
 
 
 def look_for_from(look_for, look_from):
@@ -158,6 +157,7 @@ def get_dl_file_list(args):
     start_date = datetime.strptime(args.start_date, date_format).date()
 
     full_paths = []
+    file_names = []
     number_of_days = 0
 
     for i in range(len(valid_dates)):
@@ -198,10 +198,13 @@ def get_dl_file_list(args):
             for entry in os.scandir(path_):
                 if entry.name.endswith(file_type) and entry.name.startswith(time_step.strftime("%Y%m%d")):
                     full_paths.append(os.path.join(path_, entry.name))
+                    file_names.append(entry.name)
+
         number_of_days += 1
         start_date = end_date
 
     files_info = {
+        'file_names': file_names,
         'full_paths': full_paths,
         'number_of_files': len(full_paths),
         'number_of_days': number_of_days

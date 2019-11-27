@@ -83,7 +83,7 @@ class VarBlueprint:
             self.fill_value = fill_value
 
 
-def wind_speed_(data=None, dim_name=("time", "height"), dim_size=None):
+def wind_speed_(data=None, dim_name=("unix_time", "range"), dim_size=None):
     return VarBlueprint("wind_speed",
                         standard_name="wind_speed",
                         long_name="Wind speed",
@@ -96,7 +96,7 @@ def wind_speed_(data=None, dim_name=("time", "height"), dim_size=None):
                         dim_size=dim_size)
 
 
-def wind_direction_(data=None, dim_name=("time", "height"), dim_size=None):
+def wind_direction_(data=None, dim_name=("unix_time", "range"), dim_size=None):
     return VarBlueprint("wind_direction",
                         standard_name="wind_from_direction",
                         long_name="Wind direction",
@@ -110,7 +110,7 @@ def wind_direction_(data=None, dim_name=("time", "height"), dim_size=None):
                         dim_size=dim_size)
 
 
-def unix_time_(data=None, dim_name=("time",), dim_size=None):
+def unix_time_(data=None, dim_name=("unix_time",), dim_size=None):
     return VarBlueprint("unix_time",
                         standard_name="unix_time",
                         long_name="UNIX Epoch time (seconds since 1970-01-01 00:00:00)",
@@ -121,9 +121,9 @@ def unix_time_(data=None, dim_name=("time",), dim_size=None):
                         dim_size=dim_size)
 
 
-def time_hrs_utc_(data=None, dim_name=("time",), dim_size=None):
-    return VarBlueprint("time",
-                        standard_name="time",
+def time_hrs_utc_(data=None, dim_name=("unix_time",), dim_size=None):
+    return VarBlueprint("time_hrs_utc",
+                        standard_name="time_hrs_utc",
                         long_name="Decimal hours since midnight UTC",
                         units="hours",
                         calendar="gregorian",
@@ -132,9 +132,9 @@ def time_hrs_utc_(data=None, dim_name=("time",), dim_size=None):
                         dim_size=dim_size)
 
 
-def height_agl_(data=None, dim_name=("height",), dim_size=None):
+def height_agl_(data=None, dim_name=("range",), dim_size=None):
     return VarBlueprint("height_agl",
-                        standard_name="height",
+                        standard_name="height_agl",
                         long_name="Height above ground level",
                         units="m",
                         comment="Not the same as range",

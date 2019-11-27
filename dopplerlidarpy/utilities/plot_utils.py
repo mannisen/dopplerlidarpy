@@ -53,3 +53,16 @@ def fill_gaps_with_nans(t_in, x_in, dt=1):
     x_out = np.delete(x_out, 0, 0)
 
     return t_out, x_out
+
+
+def ticks2labels(ticks):
+    """
+
+    Args:
+        ticks (list numeric): x- or y-axis ticks
+
+    Returns:
+        labels (list str): x- or y-axis tick labels
+
+    """
+    return ["%.3f" % labels for labels in ticks]

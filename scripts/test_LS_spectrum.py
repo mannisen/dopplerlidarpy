@@ -4,7 +4,7 @@
 
 """
 
-from dopplerlidarpy.mathematical.spectrum import lomb_scargle_spectrum
+from dopplerlidarpy.equations.spectrum import lomb_scargle_spectrum
 from dopplerlidarpy.utilities import general_utils as gu
 import matplotlib.pylab as plt
 import numpy as np
