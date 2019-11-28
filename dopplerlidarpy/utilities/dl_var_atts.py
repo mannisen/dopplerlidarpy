@@ -154,5 +154,14 @@ def range_(data=None, dim_name=("range",), dim_size=None):
                         dim_size=dim_size)
 
 
+def fill_in_atts(ncvar, atts):
+    ncvar.standard_name = atts.standard_name
+    ncvar.long_name = atts.long_name
+    ncvar.units = atts.units
+    ncvar.comment = atts.comment
+
+    return ncvar
+
+
 if __name__ == "__main__":
     print("'dl_attributes' can only be imported, not called directly.")

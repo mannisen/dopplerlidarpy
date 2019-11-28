@@ -194,10 +194,10 @@ def my_args_parser():
             raise err
 
     # Check optional arguments
-    try:
-        optional_arg_parser(args)
-    except NameError as err:
-        raise err
+    # try:
+    #     optional_arg_parser(args)
+    # except NameError as err:
+    #     raise err
 
     # Check date formats
     try:

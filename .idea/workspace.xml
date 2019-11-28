@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/acf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/conversions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_2d_file.nc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_2d_file_v2.nc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/manninan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/manninan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/mathematical/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/mathematical/spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/spectrum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/equations/spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/turbulence_spectra.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/plot_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/halo_config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/halo_config.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/test_LS_spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test_LS_spectrum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test_halo_fft.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test_halo_fft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test_halo_fft.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,80 +27,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>date_txt2posix</find>
-      <find>.l</find>
-      <find>[0]</find>
-      <find>data</find>
-      <find>pcolorfast</find>
-      <find>magma</find>
-      <find>00</find>
-      <find>10</find>
-      <find>21</find>
-      <find>np.array(</find>
-      <find>plt.get_cmap('viridis')</find>
-      <find>np.ceil(len(f.dimensions[&quot;time&quot;])/plot_reso)</find>
-      <find>file_name_out</find>
-      <find>plot_reso</find>
-      <find>4,</find>
-      <find>(m)</find>
-      <find>[0, 1, 2, 3, 4]</find>
-      <find>&quot;</find>
-      <find>strlist2str</find>
-      <find>2.1</find>
-      <find>, 4</find>
-      <find>, 5</find>
-      <find>VarPlotAttBlueprint</find>
-      <find>ls_</find>
-      <find>velo_</find>
-      <find>range_</find>
-      <find>ls_astro</find>
-      <find>__</find>
-      <find>se</find>
-      <find>height_agl_</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>valid_format</replace>
-      <replace>gu</replace>
-      <replace>date_txt2epoch</replace>
-      <replace>.processing_level</replace>
-      <replace>nc</replace>
-      <replace>pcolormesh</replace>
-      <replace>viridis</replace>
-      <replace>01</replace>
-      <replace>11</replace>
-      <replace>20</replace>
-      <replace>21</replace>
-      <replace>cmap</replace>
-      <replace>step</replace>
-      <replace>fname_out</replace>
-      <replace>plot_time_reso</replace>
-      <replace>5,</replace>
-      <replace>(km)</replace>
-      <replace>np.arange(0, 5, 1)</replace>
-      <replace>'</replace>
-      <replace>list2str</replace>
-      <replace>3.1</replace>
-      <replace>, 3</replace>
-      <replace>VarPlotAttributes</replace>
-      <replace>velo_sel</replace>
-      <replace>time_sel</replace>
-      <replace>velo</replace>
-      <replace>height_agl_</replace>
-      <replace>ls_</replace>
-      <replace>_</replace>
-      <replace>height_AGL</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="157" />
-    <option name="y" value="27" />
-    <option name="width" value="960" />
-    <option name="height" value="789" />
   </component>
   <component name="ProjectId" id="1U919N8VONY9AyPAHa2Cdx5P4lf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -215,7 +136,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

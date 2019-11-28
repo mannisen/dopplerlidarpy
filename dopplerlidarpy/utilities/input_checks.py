@@ -53,7 +53,8 @@ def get_dl_input_list():
             'attbeta_velo_covar',
             'sigma2vad',
             'ABLclass',
-            'wind_merged'],
+            'wind_merged',
+            'turbulence_length_scale'],
         'background_file': [
             'nc',
             'txt'],

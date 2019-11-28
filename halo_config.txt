@@ -156,6 +156,7 @@ background_file_type = txt
 num_range_gates = 400
 dir_calibrated_stare_co = /home/manninan/Documents/data/halo/kumpula/calibrated/halo-doppler-lidar-146-co/+YYYY+/
 dir_products_windvad_ele70 = /home/manninan/Documents/data/halo/kumpula/products/windvad70-lidar/+YYYY+/
+dir_products_turbulence_length_scales = /home/manninan/Documents/data/halo/kumpula/products/turbulence-length-scale-lidar/+YYYY+/
 snr_threshold_for_stare_co = 1.000
 snr_threshold_for_vad_ele15 = 1.000
 focus_stare_co = -1
