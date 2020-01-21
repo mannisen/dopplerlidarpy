@@ -192,13 +192,24 @@ def get_dl_file_list(args):
             if args.processing_level == "raw":
                 file_type = "." + args.observation_type
             else:
-                file_type = ".nc"
+                if args.file_type is not None:
+                    file_type = args.file_type
+                else:
+                    file_type = ".nc"
 
             # List files and get only files for which parameters are valid
-            for entry in os.scandir(path_):
-                if entry.name.endswith(file_type) and entry.name.startswith(time_step.strftime("%Y%m%d")):
-                    full_paths.append(os.path.join(path_, entry.name))
-                    file_names.append(entry.name)
+            try:
+                for entry in os.scandir(path_):
+                    if args.observation_type == 'dem':
+                        if entry.name.endswith(file_type):
+                            full_paths.append(os.path.join(path_, entry.name))
+                            file_names.append(entry.name)
+                    else:
+                        if entry.name.endswith(file_type) and entry.name.startswith(time_step.strftime("%Y%m%d")):
+                            full_paths.append(os.path.join(path_, entry.name))
+                            file_names.append(entry.name)
+            except FileNotFoundError:
+                raise  # print("FileNotFoundError: {0}".format(err))
 
         number_of_days += 1
         start_date = end_date

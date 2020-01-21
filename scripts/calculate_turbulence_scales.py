@@ -10,7 +10,7 @@ from netCDF4 import Dataset
 from datetime import datetime
 import getpass
 import uuid
-from dopplerlidarpy.utilities import my_args_parser as ap
+from dopplerlidarpy.utilities import arg_parser_tools as ap
 from dopplerlidarpy.utilities import general_utils as gu
 from dopplerlidarpy.utilities import plot_utils as pu
 from dopplerlidarpy.equations import conversions
@@ -19,6 +19,10 @@ from dopplerlidarpy.bottleneck.bottleneck.slow import move
 from dopplerlidarpy.utilities import dl_var_atts
 from dopplerlidarpy.utilities import time_utils
 from dopplerlidarpy.utilities import dl_toolbox_version
+from dopplerlidarpy.equations.acf import acf_fast_unnormalized
+from dopplerlidarpy.equations.acf import integrated_autocorr
+from dopplerlidarpy.equations.acf import acf_fast_normalized
+from sklearn import linear_model
 import pathlib
 import cmocean
 import numpy as np
@@ -41,8 +45,8 @@ from scipy.optimize import curve_fit
 # defaults
 _FONTSIZE = 16
 plt.rcParams.update({'font.size': _FONTSIZE})
-_TSTEP = 15/60  # hrs
-_TWINDOW = 60/60  # hrs -- half width!!
+_TSTEP = 10/60  # hrs
+_TWINDOW = 30/60  # hrs -- half width!!
 _RWINDOW = 1  # has to be uneven!
 _MISSING_VALUE = np.float64(0)
 _SPECTRA_SCALING_FACTOR = 2e2
@@ -61,8 +65,8 @@ _PATH_OUT = "/home/manninan/Documents/data/halo/kumpula/products/turbulence-leng
 
 # inputs to read data
 site = 'kumpula'
-start_date = '2019-08-01_00:00:00'
-end_date = '2019-08-02_00:00:00'
+start_date = '2019-08-24_00:00:00'
+end_date = '2019-08-25_00:00:00'
 processing_level = 'calibrated'
 observation_type = 'stare'
 pol = 'co'
@@ -122,28 +126,32 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
     ws_e_interp_filled[:, :3] = np.nan
 
     # initialize
-    lambda_0_out = np.empty([len(np.arange(0+_TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    lambda_0_out[:] = np.nan
-    lambda0_SE_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    lambda0_SE_out[:] = np.nan
-    mu_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    mu_out[:] = np.nan
-    mu_SE_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    mu_SE_out[:] = np.nan
-    sigma2_w_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    sigma2_w_out[:] = np.nan
-    sigma2_w_SE_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    sigma2_w_SE_out[:] = np.nan
-    l_w_out = np.empty([len(np.arange(0 + _TWINDOW, 24, _TSTEP)), len(height_AGL)])
-    l_w_out[:] = np.nan
     time_out = np.arange(0+_TWINDOW, 24, _TSTEP)
+    lambda_0_out = np.empty([len(time_out), len(height_AGL)])
+    lambda_0_out[:] = np.nan
+    lambda0_SE_out = np.empty([len(time_out), len(height_AGL)])
+    lambda0_SE_out[:] = np.nan
+    mu_out = np.empty([len(time_out), len(height_AGL)])
+    mu_out[:] = np.nan
+    mu_SE_out = np.empty([len(time_out), len(height_AGL)])
+    mu_SE_out[:] = np.nan
+    sigma2_w_out = np.empty([len(time_out), len(height_AGL)])
+    sigma2_w_out[:] = np.nan
+    sigma2_w_SE_out = np.empty([len(time_out), len(height_AGL)])
+    sigma2_w_SE_out[:] = np.nan
+    sigma2_w_unbiased = np.empty([len(time_out), len(height_AGL)])
+    sigma2_w_unbiased[:] = np.nan
+    l_w_out = np.empty([len(time_out), len(height_AGL)])
+    l_w_out[:] = np.nan
+    ws_wmean = np.empty([len(time_out), len(height_AGL)])
+    ws_wmean[:] = np.nan
 
     # slide a window with size of _TWINDOW over time with steps _TSTEP
     jj = 0
-    for j in np.arange(0+_TWINDOW, 24, _TSTEP):
-        kk = 0
+    for j in time_out:
+        # kk = 0
         for k in range(len(height_AGL)):
-            if 9 < j <= 21 and 105 < height_AGL[k] < 2000:  # 14.9 < j <= 15 and
+            if 0 < j <= 24 and 105 < height_AGL[k] < 2000:  # 14.9 < j <= 15 and
 
                 # select a sample
                 idx = np.array(np.where((time_ >= j-_TWINDOW) & (time_ <= j+_TWINDOW))).squeeze()
@@ -157,29 +165,53 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                 range_width = np.median(np.diff(height_AGL))
 
                 # Calculate wavelength and wavenumber using wind speed weighted by respective retrieval errors
-                ws_wmean = np.average(ws_sel[:], 0, 1/ws_e_sel[:]**2)
+                ws_wmean[jj, k] = np.average(ws_sel[:], 0, 1/ws_e_sel[:]**2)
 
                 # estimate true variance sigma2_w, TBD
                 sigma2_w = np.nanvar(velo_sel[:])  # - np.nanvar(velo_error_sel[:])  --> negative values, TBD
+                rng = np.arange(40)
+                my_acf = acf_fast_unnormalized(velo_sel[:])
+                my_acf_norm = acf_fast_normalized(velo_sel[:])
 
-                if np.isnan(ws_wmean) or sigma2_w < 0:
-                    kk += 1
+                # Robustly fit linear model with RANSAC algorithm
+                ransac = linear_model.RANSACRegressor()
+                X = np.empty([6, 2])
+                X[:, 0] = 1
+                X[:, 1] = np.arange(1, 7, 1)
+                ransac.fit(X, np.multiply(my_acf_norm[1:7], sigma2_w))
+                inlier_mask = ransac.inlier_mask_
+                outlier_mask = np.logical_not(inlier_mask)
+                line_X = np.empty([7, 2])
+                line_X[:, 0] = 1
+                line_X[:, 1] = np.arange(0, 7, 1)
+                line_y_ransac = ransac.predict(line_X)
+                # Check that if it's less than var(v_raw), if not there is no significant amount of noise
+                if line_y_ransac[0] < sigma2_w:
+                    sigma2_w_unbiased[jj, k] = line_y_ransac[0]
+                else:
+                    sigma2_w_unbiased[jj, k] = sigma2_w
+
+                my_acf_pos = my_acf[my_acf >= 0]
+                l_w_out[jj, k] = integrated_autocorr(my_acf, 100000, np.argmin(my_acf_pos))
+
+                if np.isnan(ws_wmean[jj, k]) or sigma2_w < 0:
+                    # kk += 1
                     continue
 
                 # conversions frequency & wave speed to lambda & wavenumber
-                lambda_w = conversions.f2lambda(ws_wmean, ref_freq)
-                th_min_lambda = _MIN_LAMBDA_SCALING_FACTOR * delta_time * ws_wmean
-                th_max_freq = conversions.lambda2f(ws_wmean, th_min_lambda)
+                lambda_w = conversions.f2lambda(ws_wmean[jj, k], ref_freq)
+                th_min_lambda = _MIN_LAMBDA_SCALING_FACTOR * delta_time * ws_wmean[jj, k]
+                th_max_freq = conversions.lambda2f(ws_wmean[jj, k], th_min_lambda)
                 ref_freq_valid = ref_freq[ref_freq < th_max_freq]
-                lambda_w_valid = conversions.f2lambda(ws_wmean, ref_freq_valid[:])
+                lambda_w_valid = conversions.f2lambda(ws_wmean[jj, k], ref_freq_valid[:])
                 wavenumber = conversions.lambda2k(lambda_w_valid[:])
                 wavenumber_4model = conversions.lambda2k(lambda_w[:])
 
                 # estimate power density with astropy's implementation of Lomb-Scargle periodogram
                 ls_astro_power = LombScargle(time_sel[:], velo_sel[:]).power(ref_freq_valid, normalization='psd')
-                ls_astro_power_med = move.move_median(ls_astro_power, 5, 3)
 
                 # Smooth with running median, extrapolate over the padded nans
+                ls_astro_power_med = move.move_median(ls_astro_power, 5, 3)
                 model_interp = interp1d(ref_freq_valid[3:], ls_astro_power_med[3:], fill_value="extrapolate")
                 ls_astro_power_med_interp = model_interp(ref_freq_valid)
 
@@ -230,32 +262,32 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
 
                 # If all nan, skip
                 if np.all(np.isnan(lambda0_SE)):
-                    kk += 1
+                    # kk += 1
                     continue
 
                 # collect data to be written out, i.e. select values with the lowest lambda0 standard error
                 idx_min_lambda0_SE = np.nanargmin(lambda0_SE)
-                lambda_0_out[jj, kk] = lambda0_est[idx_min_lambda0_SE]
-                lambda0_SE_out[jj, kk] = lambda0_SE[idx_min_lambda0_SE]
-                mu_out[jj, kk] = mu_est[idx_min_lambda0_SE]
-                mu_SE_out[jj, kk] = mu_SE[idx_min_lambda0_SE]
-                sigma2_w_out[jj, kk] = sigma2_w_est[idx_min_lambda0_SE]
-                sigma2_w_SE_out[jj, kk] = sigma2_w_SE[idx_min_lambda0_SE]
-                l_w_out[jj, kk] = turbulence_spectra.integral_scale_l_w(mu_out[jj, kk], lambda_0_out[jj, kk])
+                lambda_0_out[jj, k] = lambda0_est[idx_min_lambda0_SE]
+                lambda0_SE_out[jj, k] = lambda0_SE[idx_min_lambda0_SE]
+                mu_out[jj, k] = mu_est[idx_min_lambda0_SE]
+                mu_SE_out[jj, k] = mu_SE[idx_min_lambda0_SE]
+                sigma2_w_out[jj, k] = sigma2_w_est[idx_min_lambda0_SE]
+                sigma2_w_SE_out[jj, k] = sigma2_w_SE[idx_min_lambda0_SE]
+                # l_w_out[jj, k] = turbulence_spectra.integral_scale_l_w(mu_out[jj, k], lambda_0_out[jj, k])
 
                 if _PLOT_QUICKLOOKS is True:
                     fig = plt.figure()
                     fig.set_size_inches(10, 10)
                     ax00 = plt.subplot2grid((2, 2), (0, 0))
 
-                    wavenumber_plot = conversions.lambda2k(conversions.f2lambda(ws_wmean, ref_freq_plot))
+                    wavenumber_plot = conversions.lambda2k(conversions.f2lambda(ws_wmean[jj, k], ref_freq_plot))
                     h2 = plt.plot(wavenumber, 2e2*np.multiply(wavenumber, ls_astro_power), color=".75")
                     h21 = plt.plot(wavenumber, 2e2*np.multiply(wavenumber, ls_astro_power_med))
                     yy = turbulence_spectra.kristensen_spectral_intensity(wavenumber_4model,
-                                                                          sigma2_w, mu_out[jj, kk],
-                                                                          lambda_0_out[jj, kk])
+                                                                          sigma2_w, mu_out[jj, k],
+                                                                          lambda_0_out[jj, k])
                     h3 = plt.plot(wavenumber_4model, yy, linewidth=3)
-                    h_l = plt.plot(conversions.lambda2k(np.repeat(lambda_0_out[jj, kk], 10)),
+                    h_l = plt.plot(conversions.lambda2k(np.repeat(lambda_0_out[jj, k], 10)),
                                    np.linspace(.00001, 10, 10), color="black", linewidth=2.5, linestyle="--")
 
                     ax00.legend([h2[0], h21[0], h3[0], h_l[0]],
@@ -279,13 +311,21 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                     ax02 = plt.subplot2grid((2, 2), (0, 1))
                     ax02.set_xlim([0, 15])
                     ax02.set_ylim([0, 2200])
-                    ws_plot = ws_interp[idx, :]  # select data
-                    ws_e_plot = ws_e_interp[idx, :]  # select data
-                    ws_wmean_plot = np.average(ws_plot, 0, 1/ws_e_plot**2)  # calculate error weighted mean
-                    for iw in range(np.size(ws_plot, 0)):
+                    ws_plot = ws_interp[idx, :]
+                    ws_e_plot = ws_e_interp[idx, :]
+                    ws_wmean_plot = np.average(ws_plot[:], 0, 1/ws_e_plot[:]**2)
+                    ws_wmean_plot[ws_wmean_plot <= 0] = np.nan
+                    for iw in range(np.size(ws_sel, 0)-1):
                         plt.plot(ws_plot[iw, :], height_AGLws[:], color=".75", linestyle="None", marker=".")
-                    plt.plot(ws_wmean_plot, height_AGLws[:], linestyle="None", marker=".")
-                    plt.plot(ws_wmean_plot[k], height_AGLws[k], linestyle="None", marker=".", markersize="20")
+                    h02_1 = plt.plot(ws_plot[-1, :], height_AGLws[:], color=".75", linestyle="None", marker=".")
+                    h02_2 = plt.plot(ws_wmean_plot, height_AGLws[:], color='black', linewidth=2)
+                    P = patches.Rectangle((0, height_AGL[int(k - np.floor(_RWINDOW / 2))]),
+                                          15, np.float(range_width), alpha=.5, color="black",
+                                          fill=False, linestyle="--")
+                    ax02.add_patch(P)
+                    ax02.legend([h02_1[0], h02_2[0]], ['wind speed', 'error weighted mean'],
+                                bbox_to_anchor=(1, 1), fontsize=12)
+
                     ax02.yaxis.tick_right()
                     ax02.yaxis.set_label_position("right")
                     ax02.set_xticks(np.arange(0, 18, 3))
@@ -316,7 +356,7 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                     ax12.set_xlim([np.min(time_sel/3600), np.max(time_sel/3600)])
                     ax12.set_ylim([0, 2200])
                     velo_filledm = np.ma.masked_invalid(velo_filled)
-                    im2 = ax12.pcolormesh(time_filled, height_AGL, velo_filledm.T, vmin=-3, vmax=3, cmap=cmap2)
+                    im2 = ax12.pcolormesh(time_filled, height_AGL, velo_filledm.T, vmin=-2, vmax=2, cmap=cmap2)
                     P = patches.Rectangle((time_sel[0]/3600, height_AGL[int(k-np.floor(_RWINDOW/2))]),
                                           time_sel[-1]/3600, float(range_width), alpha=.5, color="black",
                                           fill=False, linestyle="--")
@@ -360,7 +400,7 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                                 format="png", bbox_inches="tight", pad_inches=0.1)
                     plt.close()
 
-            kk += 1
+            # kk += 1
         jj += 1
 
     if _SAVE_NC is True:
@@ -394,6 +434,12 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
         atts_range = dl_var_atts.range_()
         nc_range = dl_var_atts.fill_in_atts(nc_range, atts_range)
 
+        nc_ws_wmean = rootgrp.createVariable("wind_speed_weighted_mean", "f8", ("unix_time", "range"))
+        nc_ws_wmean.standard_name = "wind_speed_error_weighted"
+        nc_ws_wmean.long_name = "error weighted wind speed"
+        nc_ws_wmean.units = "m s-1"
+        nc_ws_wmean.comment = "Newsom et al. (2017) retrieval errors used as weights = 1/error**2 in numpy.average"
+
         nc_lambda0 = rootgrp.createVariable("lambda0", "f8", ("unix_time", "range"))
         nc_lambda0.standard_name = "transition_wavelength"
         nc_lambda0.long_name = "transition wavelength"
@@ -420,15 +466,21 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
 
         nc_sigma2_w = rootgrp.createVariable("sigma2_w", "f8", ("unix_time", "range"))
         nc_sigma2_w.standard_name = "sigma2_w"
-        nc_sigma2_w.long_name = "vertical velocity variance"
+        nc_sigma2_w.long_name = "observed vertical velocity variance"
         nc_sigma2_w.units = "m2 s-2"
-        nc_sigma2_w.comment = "true air motion variance"
+        nc_sigma2_w.comment = "biased variance"
+
+        nc_sigma2_w_unbiased = rootgrp.createVariable("sigma2_w_unbiased", "f8", ("unix_time", "range"))
+        nc_sigma2_w_unbiased.standard_name = "sigma2_w_unbiased"
+        nc_sigma2_w_unbiased.long_name = "unbiased vertical velocity variance"
+        nc_sigma2_w_unbiased.units = "m2 s-2"
+        nc_sigma2_w_unbiased.comment = "true air motion variance"
 
         nc_sigma2_w_SE = rootgrp.createVariable("sigma2_w_standard_error", "f8", ("unix_time", "range"))
-        nc_sigma2_w.standard_name = "sigma2_w_standard_error"
-        nc_sigma2_w.long_name = "standard error of vertical velocity variance"
-        nc_sigma2_w.units = "m2 s-2"
-        nc_sigma2_w.comment = ""
+        nc_sigma2_w_SE.standard_name = "sigma2_w_standard_error"
+        nc_sigma2_w_SE.long_name = "standard error of vertical velocity variance"
+        nc_sigma2_w_SE.units = "m2 s-2"
+        nc_sigma2_w_SE.comment = ""
 
         nc_l_w = rootgrp.createVariable("l_w", "f8", ("unix_time", "range"))
         nc_l_w.standard_name = "along_wind_integral_scale"
@@ -456,6 +508,8 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
         sigma2_w_out[np.isnan(sigma2_w_out)] = _MISSING_VALUE
         sigma2_w_SE_out[np.isnan(sigma2_w_SE_out)] = _MISSING_VALUE
         l_w_out[np.isnan(l_w_out)] = _MISSING_VALUE
+        ws_wmean[np.isnan(ws_wmean)] = _MISSING_VALUE
+        sigma2_w_unbiased[np.isnan(sigma2_w_unbiased)] = _MISSING_VALUE
 
         # assign data
         nc_unix_time[:] = unix_time_[:]
@@ -471,6 +525,8 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
         nc_l_w[:] = l_w_out[:]
         nc_min_lambda_sf[:] = _MIN_LAMBDA_SCALING_FACTOR
         nc_spectra_sf[:] = _SPECTRA_SCALING_FACTOR
+        nc_ws_wmean[:] = ws_wmean[:]
+        nc_sigma2_w_unbiased[:] = sigma2_w_unbiased[:]
 
         # global attributes
         title_ = "HALO Doppler lidar retrievals",

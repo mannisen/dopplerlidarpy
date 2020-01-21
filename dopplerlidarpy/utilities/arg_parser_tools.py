@@ -19,12 +19,13 @@ class ArgsBlueprint(object):
 
     # Initialize with defaults
     def __init__(self, site=None, start_date=None, end_date=None, processing_level=None, observation_type=None,
-                 pol=None, e=None, b=None, a=None, i=None, dpi=None):
+                 file_type=None, pol=None, e=None, b=None, a=None, i=None, dpi=None):
         self.site = site
         self.start_date = start_date
         self.end_date = end_date
         self.processing_level = processing_level
         self.observation_type = observation_type
+        self.file_type = file_type
         self.pol = pol
         self.e = e
         self.b = b
@@ -90,6 +91,8 @@ def prod_arg_parser(args):
         raise NameError(msg_body.format(args.observation_type, '-b | -e', '[0-90] | [3-5] (respectively)'))
     elif args.observation_type == 'sigma2_vad' and args.e is None:
         raise NameError(msg_body.format(args.observation_type, '-e', '[0-90]'))
+    elif args.observation_type == 'dem' and args.file_type is None:
+        raise NameError(msg_body.format(args.observation_type, '-file_type', 'tif'))
 
 
 def optional_arg_parser(args):
@@ -110,6 +113,8 @@ def optional_arg_parser(args):
         raise NameError(msg_body.format('-b', "'epsilon' or 'winddbs'", args.observation_type))
     elif (args.observation_type not in ['epsilon', 'windvad', 'sigma2vad']) and args.e is not None:
         raise NameError(msg_body.format('-e', "'epsilon', 'windvad', or 'sigma2vad'", args.observation_type))
+    elif args.observation_type not in ['dem'] and args.file_type is not None:
+        raise NameError(msg_body.format('-file_type', "'dem'", args.observation_type))
     elif args.processing_level == "raw":
         raise NameError("Optional arguments are not accepted with '{}'".format(args.observation_type))
 
@@ -170,6 +175,11 @@ def my_args_parser():
     # plot dpi
     dpi_msg = "dpi in plots"
     parser.add_argument('-dpi', type=int, help=dpi_msg, choices=range(50, 1000), metavar='dpi')
+
+    # file_type
+    ftype_msg = "file type"
+    parser.add_argument('-file_type', type=str, help=ftype_msg,
+                        choices=dl_in["file_types"], metavar='e.g. nc, txt, tiff')
 
     args = parser.parse_args()
 

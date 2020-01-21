@@ -54,13 +54,16 @@ def get_dl_input_list():
             'sigma2vad',
             'ABLclass',
             'wind_merged',
-            'turbulence_length_scale'],
+            'turbulence_length_scale',
+            'dem'],
         'background_file': [
             'nc',
             'txt'],
         'polarization': [
             'co',
-            'cross']
+            'cross'],
+        'file_types': [
+            'tif']
     }
 
     return dl_inputs

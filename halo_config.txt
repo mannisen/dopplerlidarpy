@@ -121,6 +121,7 @@ parameters_valid_from_including = 2019-08-01_00:00:00
 system = HALO XR Doppler lidar
 title = FMI HALO XR Doppler lidar
 location = Kumpula
+country_code = FIN
 latitude = 60.333
 longitude = 25.6
 home_point_azimuth = 210
@@ -155,14 +156,20 @@ file_naming_original_stare_co12 = stare12
 background_file_type = txt
 num_range_gates = 400
 dir_calibrated_stare_co = /home/manninan/Documents/data/halo/kumpula/calibrated/halo-doppler-lidar-146-co/+YYYY+/
-dir_products_windvad_ele70 = /home/manninan/Documents/data/halo/kumpula/products/windvad70-lidar/+YYYY+/
-dir_products_turbulence_length_scales = /home/manninan/Documents/data/halo/kumpula/products/turbulence-length-scale-lidar/+YYYY+/
+dir_product_windvad_ele70 = /home/manninan/Documents/data/halo/kumpula/products/windvad70-lidar/+YYYY+/
+dir_product_turbulence_length_scales = /home/manninan/Documents/data/halo/kumpula/products/turbulence-length-scale-lidar/+YYYY+/
+dir_product_epsilon = /home/manninan/Documents/data/halo/kumpula/products/epsilon-lidar/+YYYY+/
+dir_product_dem = /home/manninan/Documents/data/DEM/kumpula/
 snr_threshold_for_stare_co = 1.000
 snr_threshold_for_vad_ele15 = 1.000
 focus_stare_co = -1
 num_pulses_m1_stare_co = 90000
 num_pulses_m2_stare_co = 0
 num_samples_gate_stare_co = 10
+parameters_valid_from_including = 2019-12-01_00:00:00
+dir_calibrated_stare_co = /home/manninan/Documents/data/halo/kumpula/calibrated/halo-doppler-lidar-34-co/+YYYY+/
+system = HALO Streamline Doppler lidar
+title = FMI HALO STREAMLINE Doppler lidar
 
 
 

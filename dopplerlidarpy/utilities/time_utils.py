@@ -174,8 +174,8 @@ def datetime_range(start_datetime, end_datetime):
     """Generates a range of dates in epoch.
 
     Args:
-        start_datetime: (datetime) Start date, e.g. date(2001,1,1,00,00,00)
-        end_datetime: (datetime) End date, e.g. date(2001,12,31,23,59,59)
+        start_datetime: (datetime) Start date, e.g. datetime(2001,1,1,00,00,00)
+        end_datetime: (datetime) End date, e.g. datetime(2001,12,31,23,59,59)
 
     Returns:
         : (range) Datetime range from start_datetime to end_datetime

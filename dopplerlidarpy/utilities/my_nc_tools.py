@@ -14,6 +14,23 @@ import getpass
 import uuid
 
 
+def read_nc_fields(nc_file, names):
+    """Reads selected variables from a netCDF file.
+    Args:
+        nc_file (str): netCDF file name.
+        names (str/list): Variables to be read, e.g. 'temperature' or
+            ['ldr', 'lwp'].
+    Returns:
+        ndarray/list: Array in case of one variable passed as a string.
+        List of arrays otherwise.
+    """
+    names = [names] if isinstance(names, str) else names
+    nc = Dataset(nc_file)
+    data = [nc.variables[name][:] for name in names]
+    nc.close()
+    return data[0] if len(data) == 1 else data
+
+
 def create_nc_dims(rootgrp, var, dimension_names):
     if var.dim_name is not None:
         for dname, dsize in zip(var.dim_name, var.dim_size):

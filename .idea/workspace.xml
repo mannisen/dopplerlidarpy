@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/leosphere/leosphere_data_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/FIN_coordinate_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dem_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/pyart_coordinate_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/compare_halo_to_leosphere_kumpula.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/plot_dem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dopplerlidarpy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dopplerlidarpy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/equations/spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/turbulence_spectra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/equations/acf.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/acf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/get_files.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/arg_parser_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/halo_config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/halo_config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test_LS_spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test_LS_spectrum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test_halo_fft.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/calculate_flies.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/calculate_flies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/plot_quicklooks.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plot_quicklooks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_halo_calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run_halo_calibration.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,15 +135,6 @@
       <updated>1562223290822</updated>
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

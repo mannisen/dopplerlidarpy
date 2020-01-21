@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from dopplerlidarpy.utilities import arg_parser_tools as ap
-from dopplerlidarpy.utilities.plot_dl import plot_dl
+from dopplerlidarpy.utilities.dem_tools import get_dem
 
 args = ap.my_args_parser()
 
-plot_dl(args)
+dem_data = get_dem(args)

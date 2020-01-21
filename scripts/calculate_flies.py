@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from dopplerlidarpy.utilities.my_args_parser import ap
+from dopplerlidarpy.utilities.arg_parser_tools import ap
 from dopplerlidarpy.utilities import general_utils as gu
 
 args = ap.my_args_parser()

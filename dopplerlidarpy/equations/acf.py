@@ -82,3 +82,36 @@ def acf_fast_normalized(x):
     r2 = np.fft.ifft(np.abs(np.fft.fft(x))**2).real
     c = (r2/x.shape-np.mean(x)**2)/np.std(x)**2
     return c[:len(x)//2]
+
+
+def integrated_autocorr(acorrn, n, window=None):
+    """Calculates the integrated autocorellations by integrating
+    up to a window length, w, across the autocorrelation function
+
+    Required Inputs
+        acorrn :: np.ndarray :: normalised autocorrelation function
+        n      :: int        :: number of MCMC samples
+
+    Optional
+        window :: int  :: optional window to integrate up to
+
+    Returns
+        itau      :: float :: integrated autocorrelation function
+        itau_diff :: float :: errors in itau
+        itau_aav  :: np.ndarray :: itau at each window length
+
+    Notes
+        The correction of - 0.5,
+            $$\bbar{C}_F(W) = \Lambda_F(0) + 2\sum_1^W \Lambda_F(W)$$
+        estimating for $\bbar{\nu}_F \approx \Lambda_F(0)$ then,
+            $$\bbar{\tau_{int},F}(W) = \frac{\bbar{C}_F(W)}{2\bbar{\nu}_F}$$
+            $$\bbar{\tau_{int},F}(W) = 0.5 + \frac{2}{\bbar{\nu}_F}\sum_1^W \Lambda_F(W)$$
+
+    References:
+        https://github.com/flipdazed/Hybrid-Monte-Carlo
+    """
+    if window is None: window = acorrn.size  # assume alrady windowed
+    itau_aav = np.cumsum(np.nan_to_num(acorrn)) - .5  # Eq. (41)
+    itau = itau_aav[window]
+    # itau_diff = itauErrors(itau, n, window=window)
+    return itau
