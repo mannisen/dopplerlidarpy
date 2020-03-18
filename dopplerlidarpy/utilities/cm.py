@@ -23,7 +23,7 @@ from __future__ import print_function, division
 import matplotlib as mpl
 import matplotlib.cm
 import matplotlib.colors as colors
-
+import numpy as np
 from dopplerlidarpy.utilities._cm import datad
 
 cmap_d = dict()
@@ -70,6 +70,7 @@ def _reverse_cmap_spec(spec):
             revspec = [(1.0 - a, b) for a, b in revspec]
         return revspec
 
+
 def _generate_cmap(name, lutsize):
     """Generates the requested cmap from it's name *name*.  The lut size is
     *lutsize*."""
@@ -82,6 +83,7 @@ def _generate_cmap(name, lutsize):
     else:
         return colors.LinearSegmentedColormap.from_list(name, spec, lutsize)
 
+
 LUTSIZE = mpl.rcParams['image.lut']
 
 # need this list because datad is changed in loop
@@ -90,9 +92,9 @@ _cmapnames = list(datad.keys())
 # Generate the reversed specifications ...
 
 for cmapname in _cmapnames:
-     spec = datad[cmapname]
-     spec_reversed = _reverse_cmap_spec(spec)
-     datad[cmapname + '_r'] = spec_reversed
+    spec = datad[cmapname]
+    spec_reversed = _reverse_cmap_spec(spec)
+    datad[cmapname + '_r'] = spec_reversed
 
 # Precache the cmaps with ``lutsize = LUTSIZE`` ...
 

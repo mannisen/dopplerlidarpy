@@ -56,9 +56,9 @@ for i in range(files_info_scales["number_of_files"]):  # assumed one per day and
 
     #print("Loading {}".format(files_info_vad70["full_paths"][i]))
     #f_ws70 = Dataset(files_info_vad70["full_paths"][i], "r")
-    #time_ws70 = np.array(f_ws70.variables["time"][:])
-    #height_AGLws70 = np.array(f_ws70.variables["height_agl"][:])
-    #ws70 = np.array(f_ws70.variables["wind_speed"][:])
+    #time_ws70 = np.array(f_ws70.attributes["time"][:])
+    #height_AGLws70 = np.array(f_ws70.attributes["height_agl"][:])
+    #ws70 = np.array(f_ws70.attributes["wind_speed"][:])
     #f_ws70.close()
 
     print("Loading {}".format(files_info_epsilon["full_paths"][i]))

@@ -52,13 +52,13 @@ def get_dl_config(args):
     elif os.path.isfile(path_to_config + ".db"):
         config_info = get_dl_config_db(args)
     else:
-        raise ValidationError("No 'halo_config.txt' or 'halo_config.db' file found.")
+        raise ValidationError("No 'dl_config.txt' or 'halo_config.db' file found.")
 
     return config_info
 
 
 def get_dl_config_db(args):
-    """Reads the halo_config.db into a dictionary.
+    """Reads the dl_config.db into a dictionary.
 
     Args:
         args (class): A populated namespace object
@@ -75,7 +75,7 @@ def get_dl_config_db(args):
 
 
 def get_dl_config_txt(args):
-    """Reads the halo_config.txt into a dictionary.
+    """Reads the dl_config.txt into a dictionary.
 
     Args:
         args (class): A populated namespace object
@@ -89,7 +89,7 @@ def get_dl_config_txt(args):
     validate_site(args.site)
 
     # open the file for reading
-    file_handle = open('halo_config.txt', 'r')
+    file_handle = open('dl_config.txt', 'r')
     tmp_default_keys = []
     tmp_default_values = []
     tmp_site_keys = []
@@ -126,13 +126,13 @@ def get_dl_config_txt(args):
 
     # Give error if site not found
     if not tmp_site_keys:
-        raise ConfigError("No parameters found for site '{}' from halo_config.txt".format(args.site))
+        raise ConfigError("No parameters found for site '{}' from dl_config.txt".format(args.site))
 
     # Filter empty elements
     tmp_site_keys = list(filter(None, tmp_site_keys))
     tmp_site_values = list(filter(None, tmp_site_values))
 
-    # Parse redefined parameters from the halo_config.txt
+    # Parse redefined parameters from the dl_config.txt
     ival_begin = gu.look_for_from('parameters_valid_from_including', tmp_site_keys)
 
     # Initialize

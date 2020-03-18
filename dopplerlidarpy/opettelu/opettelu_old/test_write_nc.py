@@ -13,10 +13,10 @@ import numpy as np
 
 from dopplerlidarpy.utilities import variables
 
-#from utilities.variables import time
-#from utilities.variables import unix_time
-#from utilities.variables import height
-#from utilities.variables import wind_speed
+#from utilities.attributes import time
+#from utilities.attributes import unix_time
+#from utilities.attributes import height
+#from utilities.attributes import wind_speed
 
 times = np.arange(0,100)
 heights = np.arange(0,10)
@@ -28,7 +28,7 @@ rootgrp = Dataset('sample.nc','w', format='NETCDF4_CLASSIC')
 rootgrp.createDimension("time",len(times))
 rootgrp.createDimension("height",len(heights))
 
-# Choose from predefined variables
+# Choose from predefined attributes
 vars_to_write = [unix_time,time,height,wind_speed]
 
 nc_vars = {}

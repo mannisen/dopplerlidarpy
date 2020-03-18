@@ -23,7 +23,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from dopplerlidarpy.utilities import dl_var_atts as dl_atts
-from dopplerlidarpy.utilities.my_nc_tools import write_nc_
+from dopplerlidarpy.utilities.nc_tools import write_nc_
 from dopplerlidarpy.utilities.general_utils import look_for_from
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -129,7 +129,7 @@ def leosphere_sta2nc(site_name, path_in, path_out, file_type="sta", file_encodin
                 df["unix_time"] = unix_time_all
                 df["time_hrs_utc"] = time_hrs_utc_all
 
-                # Initialize predefined common Doppler lidar variables
+                # Initialize predefined common Doppler lidar attributes
                 time_unix = dl_atts.unix_time_(data=df["unix_time"].values, dim_size=(len(df["unix_time"]),))
                 time = dl_atts.time_hrs_utc_(data=df["time_hrs_utc"].values, dim_size=(len(df["unix_time"]),))
                 height = dl_atts.height_agl_(data=heights, dim_size=(len(heights),))
@@ -138,7 +138,7 @@ def leosphere_sta2nc(site_name, path_in, path_out, file_type="sta", file_encodin
                 find_wd = [i for i in df.columns.tolist() if "Wind Direction (°)" in i]
                 wd = dl_atts.wind_direction_(data=df[find_wd].values, dim_size=(len(df["unix_time"]), len(heights)))
 
-                # Initialize the rest of the variables
+                # Initialize the rest of the attributes
                 temp_int = dl_atts.VarBlueprint("temperature_internal", data=df["Int Temp (°C)"].tolist(),
                                                 dim_name=("time",), dim_size=(len(df["unix_time"]),),
                                                 standard_name="temperature_internal",

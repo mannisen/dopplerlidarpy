@@ -62,7 +62,7 @@ def look_for_from(look_for, look_from):
         look_from (list): list of strings (str) to look from
 
     Returns:
-        indices (list): indices (int) where found
+        indices (int/list): indices (int) where found
 
     """
 
@@ -76,8 +76,8 @@ def look_for_from(look_for, look_from):
         raise ValueError('Second input must a string.')
         
     indices = [i for i, x in enumerate(look_from) if look_for in x]
-    
-    return indices
+
+    return indices[0] if len(indices) == 1 else indices
 
 
 def camel2snake(str_in):
@@ -110,6 +110,41 @@ def list2str(in_list):
     ret_list = "'" + "', '".join(in_list) + "'"
 
     return ret_list
+
+
+def list_files(path_, file_type, starting_pattern=None):
+    """A general function for listing files in a folder.
+
+    Args:
+        path_ (str): path to folder
+        file_type (str): file type. e.g. ".nc"
+        starting_pattern (str): "VADprof", "if t = 20170431 --> t.strftime("%Y%m%d")"
+
+    Returns:
+        file_info (dict): dictionary listing file names, full paths and total number of files
+
+    """
+
+    full_paths = []
+    file_names = []
+    # List files and get only files for which parameters are valid
+    try:
+        for entry in os.scandir(path_):
+            if starting_pattern is not None:
+                if entry.name.endswith(file_type) and entry.name.startswith(starting_pattern):
+                    full_paths.append(os.path.join(path_, entry.name))
+                    file_names.append(entry.name)
+            else:
+                if entry.name.endswith(file_type):
+                    full_paths.append(os.path.join(path_, entry.name))
+                    file_names.append(entry.name)
+
+    except FileNotFoundError as err:
+        raise print("FileNotFoundError: {0}".format(err))
+
+    return {'file_names': file_names,
+            'full_paths': full_paths,
+            'number_of_files': len(full_paths)}
 
 
 def get_dl_file_list(args):
@@ -214,12 +249,7 @@ def get_dl_file_list(args):
         number_of_days += 1
         start_date = end_date
 
-    files_info = {
-        'file_names': file_names,
-        'full_paths': full_paths,
-        'number_of_files': len(full_paths),
-        'number_of_days': number_of_days
-    }
+    files_info = {'number_of_days': number_of_days}
 
     return files_info
 
@@ -240,3 +270,10 @@ def rreplace(s, old, new, occurrence):
     """
     li = s.rsplit(old, occurrence)
     return new.join(li)
+
+
+def copy_attributes(obj_from, obj_to, att_names):
+    for n in att_names:
+        if hasattr(obj_from, n) and getattr(obj_from, n) is not None:
+            v = getattr(obj_from, n)
+            setattr(obj_to, n, v)

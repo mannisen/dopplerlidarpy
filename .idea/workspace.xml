@@ -2,31 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/leosphere/leosphere_data_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/FIN_coordinate_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dem_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/pyart_coordinate_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/compare_halo_to_leosphere_kumpula.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/plot_dem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dopplerlidarpy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dopplerlidarpy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dl_config.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/attributes/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/attributes/products.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/db_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/db_setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/dl_config.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/_formhelpers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/delete_album.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/edit_album.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/new_album.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/html_templates/results.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/old_codes.tar.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/db_tools/test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/velocity_statistics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/test_database" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/calculate_co2_from_dial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/convert_UHOH_to_cloudnet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/equations/acf.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/acf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/asv_bench/asv.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/asv_bench/asv.conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/bottleneck/slow/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/bottleneck/slow/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/equations/conversions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/equations/conversions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/halo/read_hpl_write_nc.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/halo/read_hpl_write_nc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/leosphere/read_sta_and_write_nc.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/leosphere/read_sta_and_write_nc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/opettelu/opettelu_old/test_write_nc.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/opettelu_old/test_write_nc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/cm.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/cm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_config_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_config_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_atts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_plot_atts.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/dl_var_plot_atts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/general_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/get_files.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/input_checks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_args_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/arg_parser_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/time_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halo_config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/halo_config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log_calculate_turbulence_scales_20190801.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/calculate_flies.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/calculate_flies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/my_nc_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/nc_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dopplerlidarpy/utilities/plot_dl.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/utilities/plot_dl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/halo_config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dl_config.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/calculate_turbulence_scales.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/plot_quicklooks.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plot_quicklooks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/compare_halo_to_leosphere_kumpula.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/compare_halo_to_leosphere_kumpula.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plot_turbulence_scales.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/run_halo_calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/run_halo_calibration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test_LS_spectrum.py" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/test_LS_spectrum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_2d_file.nc" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/test_2d_file.nc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_2d_file_v2.nc" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/opettelu/test_2d_file_v2.nc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_database" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/attributes/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +62,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -50,16 +76,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dopplerlidarpy/mathematical" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dopplerlidarpy/opettelu" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/dopplerlidarpy/html" />
+      <recent name="$PROJECT_DIR$/dopplerlidarpy/mathematical" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -74,7 +104,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_halo_calibration">
+  <component name="RunManager" selected="Python.convert_UHOH_to_cloudnet">
+    <configuration name="convert_UHOH_to_cloudnet" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dopplerlidarpy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/convert_UHOH_to_cloudnet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run_halo_calibration" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="dopplerlidarpy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,6 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.convert_UHOH_to_cloudnet" />
         <item itemvalue="Python.run_halo_calibration" />
       </list>
     </recent_temporary>

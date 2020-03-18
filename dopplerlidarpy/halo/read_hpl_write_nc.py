@@ -22,7 +22,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from dopplerlidarpy.utilities import dl_var_atts as dl_atts
-from dopplerlidarpy.utilities.my_nc_tools import write_nc_
+from dopplerlidarpy.utilities.nc_tools import write_nc_
 from dopplerlidarpy.utilities.general_utils import look_for_from
 pd.options.mode.chained_assignment = None  # default='warn'
 

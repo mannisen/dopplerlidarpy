@@ -31,7 +31,7 @@ class VarPlotBlueprint:
         self.vmax = vmax
 
 
-# Generate plot attributes for Doppler lidar variables. Only the ones that differ from defaults need to be specified!
+# Generate plot attributes for Doppler lidar attributes. Only the ones that differ from defaults need to be specified!
 def wind_speed_():
     var = vatts.wind_speed_()  # get default variable attributes
     var.cextend = "max"

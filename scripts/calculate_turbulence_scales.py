@@ -167,7 +167,7 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                 # Calculate wavelength and wavenumber using wind speed weighted by respective retrieval errors
                 ws_wmean[jj, k] = np.average(ws_sel[:], 0, 1/ws_e_sel[:]**2)
 
-                # estimate true variance sigma2_w, TBD
+                # estimate true variance sigma2_w
                 sigma2_w = np.nanvar(velo_sel[:])  # - np.nanvar(velo_error_sel[:])  --> negative values, TBD
                 rng = np.arange(40)
                 my_acf = acf_fast_unnormalized(velo_sel[:])
@@ -234,16 +234,16 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
                 Sk[:] = np.nan
                 func = turbulence_spectra.kristensen_spectral_intensity
                 for lambda_0 in lambda_guess:
-                    if np.isfinite(lambda_0) and np.isfinite(sigma2_w):
+                    if np.isfinite(lambda_0) and np.isfinite(sigma2_w_unbiased):
 
                         # Fit Kristensen model (Kristensen et al. 1989) to the running median filtered w spectra
                         # estimated with Lomb-Scargle periodogram and scaled with a scaling factor
                         try:
                             popt, pcov = curve_fit(func, wavenumber, _SPECTRA_SCALING_FACTOR *
                                                    np.multiply(wavenumber, ls_astro_power_med_interp),
-                                                   p0=[sigma2_w, mu_, lambda_0],
-                                                   bounds=((sigma2_w*.99, mu_*.15, lambda_0*.9),
-                                                           (sigma2_w*1.01, mu_*1.75, lambda_0*1.1)),
+                                                   p0=[sigma2_w_unbiased, mu_, lambda_0],
+                                                   bounds=((sigma2_w_unbiased*.99, mu_*.15, lambda_0*.9),
+                                                           (sigma2_w_unbiased*1.01, mu_*1.75, lambda_0*1.1)),
                                                    maxfev=10000)
 
                             variance_ = np.diagonal(pcov)
@@ -417,7 +417,7 @@ for i in range(files_info["number_of_files"]):  # assumed one per day
         rootgrp.createDimension("unix_time", len(unix_time_))
         rootgrp.createDimension("range", len(range_out))
 
-        # create nc variables
+        # create nc attributes
         nc_unix_time = rootgrp.createVariable("unix_time", "f8", "unix_time")
         atts_time = dl_var_atts.unix_time_()
         nc_unix_time = dl_var_atts.fill_in_atts(nc_unix_time, atts_time)

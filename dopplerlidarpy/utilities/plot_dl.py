@@ -36,7 +36,7 @@ def read_dl_vars(file_name, obs):
     # Get netcdf handle
     f = Dataset(file_name, "r")
 
-    # Extract slices of variables
+    # Extract slices of attributes
     step = int(np.ceil(len(f.dimensions["time"]) / _PLOT_XRESO))
 
     d_out = dict()
@@ -50,7 +50,7 @@ def read_dl_vars(file_name, obs):
     else:
         raise ValueError("Range units must be 'km' or 'm'!")
 
-    # Read variables in time-range dimensions
+    # Read attributes in time-range dimensions
     for var in obs:
         d_out[var] = f.variables[var][::step, :].transpose()
 
@@ -83,7 +83,7 @@ def create_pcolor_plot(fig_=None, ax_=None, x_=None, y_=None, Z=None):
 
     """
 
-    # Extract slices of variables
+    # Extract slices of attributes
     step = int(np.ceil(len(f.dimensions["time"]) / _PLOT_XRESO))
     # Get time
     time_ = f.variables[x_][::step]
