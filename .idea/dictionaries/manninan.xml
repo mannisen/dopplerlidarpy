@@ -2,6 +2,7 @@
   <dictionary name="manninan">
     <words>
       <w>attbeta</w>
+      <w>backscatter</w>
       <w>cext</w>
       <w>cextend</w>
       <w>cloudnet</w>
@@ -13,6 +14,7 @@
       <w>fulldate</w>
       <w>gatts</w>
       <w>gutils</w>
+      <w>heterodyne</w>
       <w>hifac</w>
       <w>igps</w>
       <w>iheight</w>
@@ -35,6 +37,7 @@
       <w>rreplace</w>
       <w>strlist</w>
       <w>tutils</w>
+      <w>unitless</w>
       <w>velo</w>
       <w>wavenumber</w>
       <w>windcube</w>

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44ba11f0-c686-445c-9615-c561c6036390" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HITRAN_CO2_transition_data.par" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/manninan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/manninan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/asv_bench/asv.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/dopplerlidarpy/bottleneck/asv_bench/asv.conf.json" afterDir="false" />
